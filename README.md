@@ -1,7 +1,7 @@
 # go-ssm
 Package ssm provides the client and types for making API requests to Amazon Simple Systems Manager (SSM). 
 
-    import "githubdev.dco.elmae/ReleaseEngineering/verita-core/data/ssm"
+    import "github.com/pradeeprajagopal/go-ssm"
 #### *What is SSM?*
 
 AWS Systems Manager Parameter Store provides secure, hierarchical storage for configuration data management and secrets management
