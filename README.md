@@ -1,4 +1,4 @@
-# go-ssm [![GitHub][license-img]][license] [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci] [![Code Coverage][cov-img]][cov] [![Go Report Card][go-report-img]][go-report]
+# go-ssm [![GitHub][license-img]][license] [![Go Report Card](https://goreportcard.com/badge/github.com/pradeeprajagopal/go-ssm)](https://goreportcard.com/report/github.com/pradeeprajagopal/go-ssm)
 
 Package ssm provides the client and types for making API requests to Amazon Simple Systems Manager (SSM). 
 
