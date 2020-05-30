@@ -42,10 +42,11 @@ type Params struct {
 	//Client
 	svc *SSM
 }
+
 /*
 sessions creates a new aws session using default credentials and returns a pointer of the session and an error
 */
-func sessions() (*session.Session, error){
+func sessions() (*session.Session, error) {
 	sess, err := session.NewSession()
 	svc := session.Must(sess, err)
 	return svc, err
@@ -67,9 +68,9 @@ func New() *SSM {
 /*Param creates the struct for querying the param store. Type receives a name of the parameter as string and whether the parameter decryption needs to be performed*/
 func (s *SSM) Param(name string, decryption bool) *Param {
 	return &Param{
-		Name: name,
+		Name:           name,
 		WithDecryption: decryption,
-		svc: s,
+		svc:            s,
 	}
 }
 
@@ -80,36 +81,36 @@ func (s *SSM) Params(names []string, decryption bool) *Params {
 		Names = append(Names, &names[i])
 	}
 	return &Params{
-		Names: Names,
+		Names:          Names,
 		WithDecryption: decryption,
-		svc: s,
+		svc:            s,
 	}
 }
 
 /*GetValue type receives Param as receiver  and returns the value in the form of string and error*/
-func (p *Param) GetValue() (string, error){
+func (p *Param) GetValue() (string, error) {
 	svc := p.svc.client
 	parameter, err := svc.GetParameter(&ssm.GetParameterInput{
 		Name:           &p.Name,
 		WithDecryption: &p.WithDecryption,
 	})
 	if err != nil {
-		return "" , err
+		return "", err
 	}
 	value := *parameter.Parameter.Value
 	return value, nil
 }
 
 /*GetValues type receives Params as receiver  and returns the value in the form of list of string and error*/
-func (p *Params) GetValues() ([]string, error){
+func (p *Params) GetValues() ([]string, error) {
 	var results []string
 	svc := p.svc.client
 	parameter, err := svc.GetParameters(&ssm.GetParametersInput{
-		Names:           p.Names,
+		Names:          p.Names,
 		WithDecryption: &p.WithDecryption,
 	})
 	if err != nil {
-		return results , err
+		return results, err
 	}
 	for i := range parameter.Parameters {
 		results = append(results, *parameter.Parameters[i].Value)
