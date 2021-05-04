@@ -1,4 +1,4 @@
-# go-ssm [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Go Report Card](https://goreportcard.com/badge/github.com/pradeeprajagopal/go-ssm)](https://goreportcard.com/report/github.com/pradeeprajagopal/go-ssm) [![Generic badge](https://img.shields.io/badge/coverage-90-yellow.svg)](https://shields.io/)
+# go-ssm [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Go Report Card](https://goreportcard.com/badge/github.com/pradeeprajagopal/go-ssm)](https://goreportcard.com/report/github.com/pradeeprajagopal/go-ssm) [![Generic badge](https://img.shields.io/badge/coverage-90-yellow.svg)](https://shields.io/) [![Go Reference](https://pkg.go.dev/badge/github.com/pradeeprajagopal/go-ssm.svg)](https://pkg.go.dev/github.com/pradeeprajagopal/go-ssm)
 
 
 Package ssm provides the client and types for making API requests to Amazon Simple Systems Manager (SSM). 
